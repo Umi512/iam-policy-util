@@ -1,8 +1,8 @@
 {
   "imports": {
-      "/": "./",
-      "./": "./",
-      "dotenv/": "https://deno.land/x/dotenv/",
-      "testing/": "https://deno.land/std@0.65.0/testing/"
-    }
+    "/": "./",
+    "./": "./",
+    "dotenv/": "https://deno.land/x/dotenv/",
+    "testing/": "https://deno.land/std@0.65.0/testing/"
   }
+}

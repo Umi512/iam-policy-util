@@ -1,10 +1,10 @@
 {
-    "hoge":"${hoge}",
-    "hoge2":"${hoge2}",
-    "hoge3":"${hoge3}",
-    "hoge4":"${hoge4}",
-    "hoge5":"${hoge5}",
-    "hoge6":"${hoge6}",
-    "hoge7":"${hoge7}",
-    "hoge8":"${hoge8}"
+  "hoge": "${hoge}",
+  "hoge2": "${hoge2}",
+  "hoge3": "${hoge3}",
+  "hoge4": "${hoge4}",
+  "hoge5": "${hoge5}",
+  "hoge6": "${hoge6}",
+  "hoge7": "${hoge7}",
+  "hoge8": "${hoge8}"
 }
