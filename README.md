@@ -8,4 +8,6 @@
 
 ```bash
 deno run index.ts
+↓
+deno task start
 ```
