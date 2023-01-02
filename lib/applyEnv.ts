@@ -1,6 +1,7 @@
 /*
 概要：// .envファイルから環境設定値を取得し，jsonファイルのプレースホルダーを置き換える
 */
+const envPath = "./.env.sample"; // .envファイルパス
 
 import { config, DotenvConfig } from "dotenv/mod.ts";
 
@@ -9,7 +10,7 @@ export async function setJsonKey(
 ): Promise<Record<string, unknown>> {
   try {
     let checkFlag = true;
-    const env: DotenvConfig = config({ safe: true });
+    const env: DotenvConfig = config({ path: envPath, safe: true });
     const jsonData: Record<string, unknown> = await getJsonObj(filepath);
     if (Object.keys(jsonData).length <= 0) {
       throw new Error();
