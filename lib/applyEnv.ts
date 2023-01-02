@@ -6,7 +6,7 @@ import { config, DotenvConfig } from "dotenv/mod.ts";
 
 export async function setJsonKey(filepath: string): Promise<void> {
     try{
-        let checkFlag: boolean = true;
+        let checkFlag = true;
         const env: DotenvConfig = config({ safe: true });
         const jsonData: Record<string, unknown> = await getJsonObj(filepath);
         if(Object.keys(jsonData).length <= 0) {
@@ -17,7 +17,7 @@ export async function setJsonKey(filepath: string): Promise<void> {
             throw new Error();
         }
         console.log(jsonData);
-    } catch(e) {
+    } catch {
         //console.log(e.message);
     }
 }
@@ -48,14 +48,15 @@ function replaceJsonPlaceHolder(jData: Record<string, unknown>,env: Record<strin
         return false;
     }
 }
-/*function replaceJsonPlaceHolder(jData: Record<string, unknown>,env: Record<string, string>): boolean{
+/*
+function replaceJsonPlaceHolder(jData: Record<string, unknown>,env: Record<string, string>): boolean{
     try{
         for(const eKey in env) {
             for(const jKey in jData) {
                 if("${" + eKey + "}" == jData[jKey]) {
                     if(!isNaN(env[eKey])) {
                         jData[jKey] = Number(env[eKey]);
-                    } else if() {
+                    } else if(env[eKey] instanceof Array) {
 
                     } else {
                         jData[jKey] = env[eKey];
@@ -68,4 +69,5 @@ function replaceJsonPlaceHolder(jData: Record<string, unknown>,env: Record<strin
         console.log(e.message);
         return false;
     }
-}*/
+}
+*/
