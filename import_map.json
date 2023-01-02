@@ -1,0 +1,6 @@
+{
+  "imports": {
+      "setJsonKey":"./applyEnv.ts",
+      "config": "https://deno.land/x/dotenv/mod.ts"
+    }
+  }
