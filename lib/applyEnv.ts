@@ -4,10 +4,12 @@
 
 import { config, DotenvConfig } from "dotenv/mod.ts";
 
-export async function setJsonKey(filepath: string): Promise<Record<string, unknown>> {
+export async function setJsonKey(
+  filepath: string,
+): Promise<Record<string, unknown>> {
   try {
     let checkFlag = true;
-    const env: DotenvConfig = config({safe: true });
+    const env: DotenvConfig = config({ safe: true });
     const jsonData: Record<string, unknown> = await getJsonObj(filepath);
     if (Object.keys(jsonData).length <= 0) {
       throw new Error();
