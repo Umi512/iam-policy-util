@@ -1,23 +1,18 @@
 /*
-概要：本ソースと同じディレクトリにあるenvファイルのhogeキーの値を，urlに追加する
+概要：// .envファイルから環境設定値を取得し，jsonファイルのプレースホルダーを置き換える
 */
 
-// モジュールの読み込み
-import { config } from "https://deno.land/x/dotenv/mod.ts";         // 環境変数取得用
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 
-// .envファイルから環境設定値を取得し，jsonファイルのプレースホルダーを置き換える
 export async function setJsonKey(filepath:string){
     try{
         let checkFlag:boolean = true;
-        // 環境変数取得
         const env = config({ safe: true });
-        //jsonファイルの取得
         const jsonData = await getJsonObj(filepath);
         if(!jsonData){
             throw new Error();
         }
-        //プレースホルダーの置換
-        checkFlag = replacePlaceHolder(jsonData,env);
+        checkFlag = replaceJsonPlaceHolder(jsonData,env);
         if(!checkFlag){
             throw new Error();
         }
@@ -37,12 +32,11 @@ async function getJsonObj(filePath: string) :Object{
     }
 }
 
-function replacePlaceHolder(jData: Object,env: Object): boolean{
+// jsonファイルの${}を，.env環境変数ファイルの各設定値に置き換える
+function replaceJsonPlaceHolder(jData: Object,env: Object): boolean{
     try{
-        // envのkey数分ループして${}を置き換える
         for(let eKey in env){
             for(let jKey in jData){
-                //.envのキーに対応したjsonファイルのプレースホルダーの置き換え
                 if("${" + eKey + "}" == jData[jKey]){
                     jData[jKey] = env[eKey];
                 }
