@@ -2,6 +2,10 @@
   "version": "2",
   "remote": {
     "https://deno.land/std@0.164.0/async/deferred.ts": "d8fb253ffde2a056e4889ef7e90f3928f28be9f9294b6505773d33f136aab4e6",
+    "https://deno.land/std@0.168.0/fmt/colors.ts": "03ad95e543d2808bc43c17a3dd29d25b43d0f16287fe562a0be89bf632454a12",
+    "https://deno.land/std@0.168.0/testing/_diff.ts": "a23e7fc2b4d8daa3e158fa06856bedf5334ce2a2831e8bf9e509717f455adb2c",
+    "https://deno.land/std@0.168.0/testing/_format.ts": "cd11136e1797791045e639e9f0f4640d5b4166148796cad37e6ef75f7d7f3832",
+    "https://deno.land/std@0.168.0/testing/asserts.ts": "51353e79437361d4b02d8e32f3fc83b22231bc8f8d4c841d86fd32b0b0afe940",
     "https://deno.land/std@0.65.0/fmt/colors.ts": "eb606cfb06e3f03a0222f09768a9701de2dd31c1fc8fa3a939137792a472962a",
     "https://deno.land/std@0.65.0/testing/asserts.ts": "1e9f87e0ecc456caa00a95f3345c5a7aeea0a4bf25c443a54341d9f6e36e5edf",
     "https://deno.land/std@0.65.0/testing/diff.ts": "b685fb818c3527f0890628711934863672de2e94f01db421731654243f1eac8f",
