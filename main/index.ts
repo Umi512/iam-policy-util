@@ -1,4 +1,5 @@
-import { setJsonKey } from "/lib/applyEnv.ts";
+import { setJsonKey1, setJsonKey2 } from "/lib/applyEnv.ts";
 
 console.log("Hello World");
-setJsonKey("./sample.json");
+await setJsonKey1("./sample.json", "./.env.sample");
+await setJsonKey2("./sample.json", "./.env.sample");

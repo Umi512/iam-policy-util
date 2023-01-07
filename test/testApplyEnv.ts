@@ -1,9 +1,13 @@
-import { setJsonKey } from "/lib/applyEnv.ts";
+import { setJsonKey1 } from "/lib/applyEnv.ts";
 import { assertObjectMatch } from "testing/asserts.ts";
 
 Deno.test("json object check", async () => {
-  const filepath = "./sample.json";
-  const jsonData: Record<string, unknown> = await setJsonKey(filepath);
+  const filePath = "./sample.json";
+  const envPath = "./.env.sample";
+  const jsonData: Record<string, unknown> = await setJsonKey1(
+    filePath,
+    envPath,
+  );
   console.log(jsonData);
   assertObjectMatch(jsonData, {
     hoge: "1",
